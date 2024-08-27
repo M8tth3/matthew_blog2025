@@ -4,6 +4,12 @@ title: Tips
 permalink: /tips/
 ---
 
+## Places To Change Repository Name
+- In order to have a functioning repo that is deployed on github pages you need to change the name of your repo in 3 locations.
+    - Makefile
+    - _config.yml "gitub_repo"
+    - _config.yml "baseurl"
+
 ## Aliases
 > Aliases are user-defined strings that replace a command or series of commands that produce the same results as the original command. They can greatly improve a user's efficiency and command line experience
 
@@ -29,3 +35,4 @@ Ex: ```alias shortname"command1;command2```
 ```unalias alias name```
 - To remove all aliases
 ```unalias -a```
+
