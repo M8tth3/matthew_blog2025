@@ -25,7 +25,8 @@
             <label for="studentName">Name: </label>
             <input type="text" id="studentName" placeholder="Enter name here"><br><br>
             <label for="approval">Teacher's approval:</label>
-            <input type="checkbox" id="approval"><br><br>
+            <input type="text" id="approval" placeholder="Enter Signature"><br><br>
+            <!-- <input type="checkbox" id="approval"><br><br> -->
             <button onclick="submitForm()">Submit</button>
             <button onclick="randomize()">Randomize Color</button>
         </div>
@@ -34,8 +35,10 @@
             <h2>A101 Bathroom Pass</h2>
             <p>Name: <span id="nameDisplay"></span></p>
             <p>Date & time: <span id="dateTimeDisplay"></span></p>
-            <p>Teacher's approval: <span id="approvalDisplay">[✓]</span></p>
+            <p>Teacher's Signature:<span id="signature"></span></p>
+            <!-- <p>Teacher's approval: <span id="approvalDisplay">[✓]</span></p> -->
             <img src="https://github.com/user-attachments/assets/c350ab11-f560-4c76-b1f3-8bfbce017f77" alt="Teacher" style="width: 100px; height: auto;">
+            <p>Good job not using any paper! You're saving both the environment and your seed &#128585;!</p>
         </div>
     </body>
 </html>
@@ -43,14 +46,14 @@
 <script>
     function submitForm() {
         var name = document.getElementById('studentName').value;
-        var approval = document.getElementById('approval').checked;
+        var approval = document.getElementById('approval').value;
 
         if (name && approval) {
             var currentDateTime = new Date().toLocaleString();
 
             document.getElementById('nameDisplay').innerText = name;
             document.getElementById('dateTimeDisplay').innerText = currentDateTime;
-            document.getElementById('approvalDisplay').innerText = "[✓]";
+            document.getElementById('signature').innerText = approval;
 
             document.getElementById('form-pass').classList.add('hidden');
             document.getElementById('completed-pass').classList.remove('hidden');
