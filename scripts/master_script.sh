@@ -47,13 +47,13 @@ configOptions()
 
     while [ $exists != 1 ]
     do
-        echo "What would you like to configure first?"
+        echo "What would you like to configure?"
         echo
         read config
         echo
         isInList $config
     done
-    ./$config
+    source $config
     exists=0
 }
 while [ $notValid != 1 ]
