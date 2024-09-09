@@ -1,0 +1,98 @@
+---
+layout: page
+---
+<style>
+    .image {
+        width: 100px;
+        height: auto;
+        position: absolute; /* Allow absolute positioning for random placement */
+    }
+
+    #banner {
+        width: 100%;
+        height: 200px;
+        background-color: black;
+        position: relative; /* Parent element must be relative for absolute positioning */
+        overflow: hidden;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .carousel-wrapper {
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .carousel {
+        display: flex;
+        width: 100%;
+        animation: scroll 15s linear infinite;
+    }
+    
+    .carousel img {
+        width: 100vw; /* Each image takes up full viewport width */
+        height: auto;
+        flex-shrink: 0;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+</style>
+
+<div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+    </div>
+
+<h2>Happy things</h2>
+<br>
+<input id='file' type="file" name="file" accept="image/*" multiple>
+
+<h2>Hobbies</h2>
+- Button To Keep displaying one of hobbies
+
+<h2>Goals This Year</h2>
+- Image Carousel of Goals This Year with **Brief** descriptions
+
+<h2>Family</h2>
+- Image of Family
+- Family Background -> Dropdown menu if they actually want to read the "Five paragraph essay" 
+
+<script>
+    document.getElementById('file').addEventListener('change', function(event) {
+        const files = event.target.files;
+        const carousel = document.getElementById('carousel');
+    
+        Array.from(files).forEach(file => {
+            const reader = new FileReader();
+    
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                carousel.appendChild(img);
+                updateCarouselWidth();
+            }
+    
+            reader.readAsDataURL(file);
+        });
+    });
+    
+    function updateCarouselWidth() {
+        const carousel = document.getElementById('carousel');
+        const images = carousel.querySelectorAll('img');
+        const carouselWidth = images.length * 100; // 100% per image
+    
+        carousel.style.width = `${carouselWidth}%`;
+    }
+    
+</script>

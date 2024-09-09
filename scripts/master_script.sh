@@ -56,21 +56,22 @@ configOptions()
     source $config
     exists=0
 }
-while [ $notValid != 1 ]
-    do
-        configOptions
-        echo "All finished with configurations? [y/n]"
-        read conf
-        if [ "$conf" = 'y' ]
-        then
-            echo "Ok! Good luck with the rest of the image!"
-            notValid=1
-            exit
-        fi
-        if [ "$conf" = 'n' ]
-        then
-            configOptions
-        fi
+configOptions
+# while [ $notValid != 1 ]
+#     do
+#         configOptions
+#         echo "All finished with configurations? [y/n]"
+#         read conf
+#         if [ "$conf" = 'y' ]
+#         then
+#             echo "Ok! Good luck with the rest of the image!"
+#             notValid=1
+#             exit
+#         fi
+#         if [ "$conf" = 'n' ]
+#         then
+#             configOptions
+#         fi
     done
 
 # make end script option + check if user still wants to do more configs

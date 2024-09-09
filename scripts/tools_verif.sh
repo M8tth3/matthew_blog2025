@@ -2,7 +2,7 @@
 # Dependency Variables, set to match your project directories
 
 # ENVIRONMENT VARIABLES
-cat <<EOF > /tmp/variables.sh
+cat <<EOF > /tmp/variables.sh # Contains the project directory where portfolio_2025 is going to be stored. Also contains the link to git clone portfolio_2025.git
 export project_dir=$HOME/nighthawk  # change nighthawk to different name to test your git clone
 export project=\$project_dir/portfolio_2025  # change portfolio_2025 to name of project from git clone
 export project_repo="https://github.com/nighthawkcoders/portfolio_2025.git"  # change to project you created from portfolio_2025 template 
