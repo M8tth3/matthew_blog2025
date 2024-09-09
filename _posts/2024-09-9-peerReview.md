@@ -3,9 +3,10 @@ layout: post
 title: Peer Review 
 description: Peer Review
 categories: ['Collaboration']
-courses: {'csse': {'week': 0}, 'csp': {'week': 3}, 'csa': {'week': 1}}
+courses: {'csse': {'week': 0}, 'csp': {'week': 3}, 'csa':{'week': 2}}
 type: collab
 toc: True
+comments: true
 ---
     {%- include utterances.html -%}
 
@@ -20,3 +21,10 @@ toc: True
 ## Jupyter Notebook Hacks
 
 ## Collaboration Hacks
+<script src="https://utteranc.es/client.js"
+        repo="trevorhuang1/csa_blog"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
