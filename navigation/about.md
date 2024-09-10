@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+
 ---
 <style>
     body{
@@ -35,7 +36,7 @@ permalink: /about/
         height:auto;
     }
 </style>
-
+{% include nav/home.html %}
 <div></div>
 
 ### If you could have one super power... what would it be?
@@ -50,24 +51,25 @@ permalink: /about/
 <button onclick='fly()' id="fly">I also would like the ability to fly</button>
 
 ### Hobbies
-- I enjoy swimming. I'm on the Del Norte Swim Team and I swim for a club team called Pacific Swim as well.
+    I enjoy swimming. I'm on the Del Norte Swim Team and I swim for a club team called Pacific Swim as well.
 
-    <img class='images' src='https://github.com/user-attachments/assets/ca8a7a23-8bb7-4390-85ef-b7b493d71470'>
 
-- In my free time I like to play video games with my friends or by myself.
+    In my free time I like to play video games.
 
-- I like to hang out with my friends
+<img class='images' src='https://github.com/user-attachments/assets/ca8a7a23-8bb7-4390-85ef-b7b493d71470'>
 
-    <img class='images' src='https://github.com/user-attachments/assets/0395f9f2-48ab-47bd-b785-c5f638384299'>
+    I like to hang out with my friends
 
-- I enjoy baking every now and then
+<img class='images' src='https://github.com/user-attachments/assets/0395f9f2-48ab-47bd-b785-c5f638384299'>
 
-    <img class='images' src='https://github.com/user-attachments/assets/f82db223-fb56-4d20-951e-bcdd78c8be0b'>
+    I enjoy baking every now and then
+
+<img class='images' src='https://github.com/user-attachments/assets/f82db223-fb56-4d20-951e-bcdd78c8be0b'>
 
 ### Family
-- This is my family. I am the middle child of three children.
+    This is my family. I am the middle child of three children.
 
-    <img class='images' src='https://github.com/user-attachments/assets/c2c54cb7-b3ad-49fa-a45f-da19da544fae'>
+<img class='images' src='https://github.com/user-attachments/assets/c2c54cb7-b3ad-49fa-a45f-da19da544fae'>
 
 <script>
     function fly()
