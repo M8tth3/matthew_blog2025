@@ -21,6 +21,8 @@ comments: true
 ## Jupyter Notebook Hacks
 
 ## Collaboration Hacks
+
+
 <script src="https://utteranc.es/client.js"
         repo="trevorhuang1/csa_blog"
         issue-term="pathname"

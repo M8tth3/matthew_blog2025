@@ -5,11 +5,11 @@ description: Home Page
 hide: true
 ---
 
+{%include nav/home.html %}
 
 {%include homepage.html %}
-
 <!-- My journey starts here. -->
-<script>
+<!-- <script>
     window.onload = setInterval(musicLoop, 1000/10);
     let myAudio = new Audio();
     myAudio.src = 'ff7.wav';
@@ -21,4 +21,4 @@ hide: true
             myAudio.play()
         }
     }
-</script>
+</script> -->
