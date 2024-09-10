@@ -13,7 +13,7 @@ Hack 1: Test conditions on small, big, and decimal numbers, and report on findin
 Hack 2: Add the common math operation that is missing from the calculator
 Hack 3: Implement 1 number operation (ie SQRT) 
 -->
-
+<!-- {% include calculator.html %} -->
 <!-- 
 HTML implementation of the calculator. 
 -->
@@ -30,7 +30,7 @@ HTML implementation of the calculator.
       calculator output
       the top bar shows the results of the calculator;
       result to take up the entirety of the first row;
-      span defines 4 columns and 1 rows
+      span defines 4 columns and 1 row
     */
     grid-column: span 4;
     grid-row: span 1;
@@ -38,7 +38,7 @@ HTML implementation of the calculator.
     border-radius: 10px;
     padding: 0.25em;
     font-size: 20px;
-    border: 2px solid white;
+    border: 5px solid black;
   
     display: flex;
     align-items: center;
@@ -46,12 +46,9 @@ HTML implementation of the calculator.
   canvas {
     filter: none;
   }
-  
-  
 </style>
 
 <!-- Add a container for the animation -->
-
 <div id="animation">
   <div class="calculator-container">
       <!--result-->
@@ -190,6 +187,3 @@ function clearCalc () { // clears calculator
     nextReady = true;
 }
 </script>
-
-
-

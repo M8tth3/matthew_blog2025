@@ -55,6 +55,8 @@ permalink: /about/
 
 
     In my free time I like to play video games.
+    
+<p>&#128512;</p>
 
 <img class='images' src='https://github.com/user-attachments/assets/ca8a7a23-8bb7-4390-85ef-b7b493d71470'>
 
@@ -62,12 +64,13 @@ permalink: /about/
 
 <img class='images' src='https://github.com/user-attachments/assets/0395f9f2-48ab-47bd-b785-c5f638384299'>
 
-    I enjoy baking every now and then
+    I enjoy baking every now and then. I've made a few desserts and am planning on making many more in my free time.
 
 <img class='images' src='https://github.com/user-attachments/assets/f82db223-fb56-4d20-951e-bcdd78c8be0b'>
 
 ### Family
-    This is my family. I am the middle child of three children.
+    This is my family. I am the middle child of three children. I am 5.5 years younger than my older sister and 5.5 years older than my younger sister. My older sister just 
+<p>&#128585;</p>
 
 <img class='images' src='https://github.com/user-attachments/assets/c2c54cb7-b3ad-49fa-a45f-da19da544fae'>
 
