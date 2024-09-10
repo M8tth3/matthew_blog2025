@@ -39,7 +39,7 @@ permalink: /about/
 <div></div>
 
 ### If you could have one super power... what would it be?
-- **I would personally like the ability to fly. While there are some disadvantages, the advantages outweigh in my humble opinion. You can check out some advantages and disadvantages [here](https://www.quora.com/What-would-be-the-advantages-and-disadvantages-of-everyone-in-the-world-having-the-ability-to-fly)**
+**I would personally like the ability to fly. While there are some disadvantages, the advantages outweigh in my humble opinion. You can check out some advantages and disadvantages [here](https://www.quora.com/What-would-be-the-advantages-and-disadvantages-of-everyone-in-the-world-having-the-ability-to-fly)**
 <br>
 
 <img id='me' src="{{site.baseurl}}//images/Subject.png" width="60px" height=auto>
