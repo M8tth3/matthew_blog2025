@@ -88,9 +88,8 @@ permalink: /about/
 
 
 <script src="https://utteranc.es/client.js"
-        repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
-        issue-term="title"
-        label="blogpost-comment"
+        repo="m8tth3/matthew_blog2025"
+        issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
         async>
