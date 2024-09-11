@@ -48,7 +48,7 @@ permalink: /about/
 <br>
 
 
-<button onclick='fly()' id="fly">I also would like the ability to fly</button>
+<button onclick='fly()' class='button-30' id="fly">I also would like the ability to fly</button>
 
 ### Hobbies
     I enjoy swimming. I'm on the Del Norte Swim Team and I swim for a club team called Pacific Swim as well.
