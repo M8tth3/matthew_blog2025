@@ -5,6 +5,7 @@ github_username: nighthawkcoders
 github_repo: "matthew_blog2025" 
 baseurl: "/matthew_blog2025"
 future: true
+# remote_theme: jekyll/minima
 remote_theme: jekyll/minima
 minima:
   skin: dark
