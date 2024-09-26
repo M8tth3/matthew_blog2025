@@ -1,0 +1,71 @@
+
+
+<img id="yellow-minion" src="https://github.com/user-attachments/assets/2f169eb6-9928-47a3-908c-f9e473be570a">
+
+
+
+<script>
+    class Minion {
+        constructor(element) {
+            this.positionX = 100; // Starting X position
+            this.positionY = 100; // Starting Y position
+            this.currentSpeed = 10; // Speed of movement
+            this.element = document.getElementById(element);
+            this.element.style.position = "absolute";
+            this.element.style.left = this.positionX + "px";
+            this.element.style.top = this.positionY + "px";
+        }
+
+        move(direction) {
+            switch (direction) {
+                case 'left':
+                    this.positionX -= this.currentSpeed;
+                    break;
+                case 'right':
+                    this.positionX += this.currentSpeed;
+                    break;
+                case 'up':
+                    this.positionY -= this.currentSpeed;
+                    break;
+                case 'down':
+                    this.positionY += this.currentSpeed;
+                    break;
+            }
+            this.updatePosition();
+        }
+
+        updatePosition() {
+            this.element.style.left = this.positionX + "px";
+            this.element.style.top = this.positionY + "px";
+        }
+        startMoving()
+        {
+            const animate = () => {
+                this.move();
+                requestAnimationFrame(animate);
+            };
+            requestAnimationFrame(animate);
+        }
+    }
+
+const minion = new Minion('yellow-minion');
+
+window.addEventListener('keydown', function(event)
+{
+    switch(event.key)
+    {
+        case "ArrowLeft":
+            minion.move('left');
+            break;
+        case "ArrowRight":
+            minion.move('right');
+            break;
+        case "ArrowUp":
+            minion.move('up');
+            break;
+        case 'ArrowDown':
+            minion.move('down');
+            break;
+    }
+})
+</script>
