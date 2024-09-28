@@ -1,71 +1,135 @@
-
-
-<img id="yellow-minion" src="https://github.com/user-attachments/assets/2f169eb6-9928-47a3-908c-f9e473be570a">
-
-
+<img id="yellow-minion" src="https://github.com/user-attachments/assets/31771fcf-afc7-4390-ba27-14c93d2a8a78" alt="Yellow Minion">
 
 <script>
     class Minion {
         constructor(element) {
             this.positionX = 100; // Starting X position
             this.positionY = 100; // Starting Y position
-            this.currentSpeed = 10; // Speed of movement
+            this.currentSpeed = 4; // Reduced speed for smoother movement
+            this.rotation = 0; // Rotation angle
             this.element = document.getElementById(element);
             this.element.style.position = "absolute";
             this.element.style.left = this.positionX + "px";
             this.element.style.top = this.positionY + "px";
+            this.moving = {
+                left: false,
+                right: false,
+                up: false,
+                down: false
+            };
         }
 
-        move(direction) {
-            switch (direction) {
-                case 'left':
-                    this.positionX -= this.currentSpeed;
-                    break;
-                case 'right':
-                    this.positionX += this.currentSpeed;
-                    break;
-                case 'up':
-                    this.positionY -= this.currentSpeed;
-                    break;
-                case 'down':
-                    this.positionY += this.currentSpeed;
-                    break;
-            }
+        move() {
+            if (this.moving.left) this.positionX -= this.currentSpeed;
+            if (this.moving.right) this.positionX += this.currentSpeed;
+            if (this.moving.up) this.positionY -= this.currentSpeed;
+            if (this.moving.down) this.positionY += this.currentSpeed;
+            
             this.updatePosition();
+        }
+
+        rotate(direction) {
+            if (direction === 'left') {
+                this.rotation -= 5;
+            } else if (direction === 'right') {
+                this.rotation += 5;
+            }
+            this.element.style.transform = `rotate(${this.rotation}deg)`;
         }
 
         updatePosition() {
             this.element.style.left = this.positionX + "px";
             this.element.style.top = this.positionY + "px";
         }
-        startMoving()
-        {
+
+        startMoving() {
             const animate = () => {
                 this.move();
                 requestAnimationFrame(animate);
             };
             requestAnimationFrame(animate);
         }
+
+        shootProjectile() {
+            const projectile = document.createElement('img');
+            projectile.src = 'https://github.com/user-attachments/assets/a4830011-4c84-49c6-871a-d755ba8ffb01';
+            projectile.style.position = 'absolute';
+            projectile.style.width = '75px'; // Adjust size as needed
+            projectile.style.height = 'auto'; // Maintain aspect ratio
+            projectile.style.left = (this.positionX + 250) + 'px'; // Center the projectile
+            projectile.style.top = (this.positionY + 25) + 'px'; // Center the projectile
+            projectile.style.transform = `rotate(${this.rotation-90}deg)`; // Match minion's rotation
+            document.body.appendChild(projectile);
+
+            const radians = (this.rotation - 90)* (Math.PI / 180);
+            const speed = 5;
+            const velocityX = Math.cos(radians) * speed;
+            const velocityY = Math.sin(radians) * speed;
+
+            const moveProjectile = () => {
+                const currentX = parseFloat(projectile.style.left);
+                const currentY = parseFloat(projectile.style.top);
+                projectile.style.left = (currentX + velocityX) + "px";
+                projectile.style.top = (currentY + velocityY) + "px";
+
+                // Remove the projectile if it goes out of bounds
+                if (currentX > window.innerWidth || currentX < 0 || currentY > window.innerHeight || currentY < 0) {
+                    projectile.remove();
+                } else {
+                    requestAnimationFrame(moveProjectile);
+                }
+            };
+            moveProjectile();
+        }
     }
 
-const minion = new Minion('yellow-minion');
+    const minion = new Minion('yellow-minion');
 
-window.addEventListener('keydown', function(event)
-{
-    switch(event.key)
-    {
-        case "ArrowLeft":
-            minion.move('left');
-            break;
-        case "ArrowRight":
-            minion.move('right');
-            break;
-        case "ArrowUp":
-            minion.move('up');
-            break;
-        case 'ArrowDown':
-            minion.move('down');
-            break;
-    }
-})
+    // Start animation loop
+    minion.startMoving();
+
+    // Key down listener to start movement in a specific direction
+    window.addEventListener('keydown', function(event) {
+        switch (event.key) {
+            case "ArrowLeft":
+                minion.moving.left = true;
+                break;
+            case "ArrowRight":
+                minion.moving.right = true;
+                break;
+            case "ArrowUp":
+                minion.moving.up = true;
+                break;
+            case "ArrowDown":
+                minion.moving.down = true;
+                break;
+            case 'q':
+                minion.rotate('left');
+                break;
+            case 'r':
+                minion.rotate('right');
+                break;
+            case ' ':
+                minion.shootProjectile();
+                break;
+        }
+    });
+
+    // Key up listener to stop movement in a specific direction
+    window.addEventListener('keyup', function(event) {
+        switch (event.key) {
+            case "ArrowLeft":
+                minion.moving.left = false;
+                break;
+            case "ArrowRight":
+                minion.moving.right = false;
+                break;
+            case "ArrowUp":
+                minion.moving.up = false;
+                break;
+            case "ArrowDown":
+                minion.moving.down = false;
+                break;
+        }
+    });
 </script>
